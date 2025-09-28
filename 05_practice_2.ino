@@ -29,5 +29,6 @@ int toggle_state(int toggle) {
   }
 
  int sec_state(int sec) {
-  return 300;
+  return 100;
   }
+
