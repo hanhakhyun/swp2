@@ -55,7 +55,7 @@ void setup(){
 
   int a0 = analogRead(PIN_IR);
   if (a0 > 10) {
-    float d0 = ((6762.0f / (a0 - 9.0f)) - 4.0f) * 10.0f; // 초기 버전 공식
+    float d0 = ((6762.0f / (a0 - 9.0f)) - 4.0f) * 10.0f - 60.0; // 초기 버전 공식
     dist_ema = clampf(d0, _DIST_MIN, _DIST_MAX);
   }
   duty_curr = _DUTY_MIN;
@@ -127,3 +127,4 @@ void printFrame(int a_value, float dist_raw, float dist_ema, int duty){
   Serial.print(",_DUTY_MAX:"); Serial.print(_DUTY_MAX);
   Serial.println();
 }
+
